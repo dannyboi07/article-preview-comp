@@ -168,12 +168,16 @@ body {
     a {
         display: block;
         margin-top: 0.2em;
+        transform: scale(0, 0);
+        transition: transform 0.5s;
+        transition-delay: 2s;
     }
 
     img {
         margin-left: 1.5em;
         width: 22.5px;
         height: 22.5px;
+        transition: all 0.5s;
     }
 
     .triangle {
@@ -217,6 +221,17 @@ body {
 .profile-container-inactive {
     opacity: 0;
     transition: opacity 0.5s;
+    transition-delay: 0.75s;
+}
+
+.icon-pop-anim-mob {
+    transform: scale(1, 1) !important;
+    transition: transform 1s !important;
+}
+
+.icon-pop-anim {
+    transform: scale(1, 1) translateY(50%);
+    transition: transform 1s;
 }
 
 .attribution {
@@ -306,11 +321,25 @@ body {
         
         box-shadow: 0px 10px 25px #cccccc, 
         -10px 10px 25px #cccccc, 10px 10px 15px #cccccc;
-
+        // overflow: hidden;
 
         p {
             font-size: 0.9rem;
             margin-left: 0;
+        }
+
+        a {
+            transform: scale(0, 0);
+            transition: transform 1s;
+            transition-delay: 2s;
+            // margin-top: 0.5em;
+            transition: margin-top 0.5s;
+
+            img:hover {
+                width: 40px;
+                height: 40px;
+                transition: all 0.5s;
+            }
         }
 
         .triangle {
@@ -319,6 +348,7 @@ body {
             height: 35px;
             width: 35px;
             top: 99%;
+            z-index: 99;
         }
     }
 
@@ -329,4 +359,11 @@ body {
     .attribution {
         margin-top: 0;
     }
+    
+    .icon-pop-anim {
+        // margin: 2em;
+        transform: scale(1, 1) translateY(0) !important; 
+        transition: transform 1s !important; 
+    }
+
 }

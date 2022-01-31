@@ -193,12 +193,22 @@ body {
 .share-container a {
   display: block;
   margin-top: 0.2em;
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
 }
 
 .share-container img {
   margin-left: 1.5em;
   width: 22.5px;
   height: 22.5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .share-container .triangle {
@@ -245,6 +255,26 @@ body {
   opacity: 0;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+}
+
+.icon-pop-anim-mob {
+  -webkit-transform: scale(1, 1) !important;
+          transform: scale(1, 1) !important;
+  -webkit-transition: -webkit-transform 1s !important;
+  transition: -webkit-transform 1s !important;
+  transition: transform 1s !important;
+  transition: transform 1s, -webkit-transform 1s !important;
+}
+
+.icon-pop-anim {
+  -webkit-transform: scale(1, 1) translateY(50%);
+          transform: scale(1, 1) translateY(50%);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
 .attribution {
@@ -330,12 +360,31 @@ body {
     font-size: 0.9rem;
     margin-left: 0;
   }
+  .share-container a {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+    -webkit-transition-delay: 2s;
+            transition-delay: 2s;
+    -webkit-transition: margin-top 0.5s;
+    transition: margin-top 0.5s;
+  }
+  .share-container a img:hover {
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
   .share-container .triangle {
     display: block;
     position: absolute;
     height: 35px;
     width: 35px;
     top: 99%;
+    z-index: 99;
   }
   .share-ctn-animate-addon {
     -webkit-transform: scale(1, 1) translateY(-110px);
@@ -343,6 +392,14 @@ body {
   }
   .attribution {
     margin-top: 0;
+  }
+  .icon-pop-anim {
+    -webkit-transform: scale(1, 1) translateY(0) !important;
+            transform: scale(1, 1) translateY(0) !important;
+    -webkit-transition: -webkit-transform 1s !important;
+    transition: -webkit-transform 1s !important;
+    transition: transform 1s !important;
+    transition: transform 1s, -webkit-transform 1s !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
